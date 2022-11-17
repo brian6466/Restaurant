@@ -14,6 +14,9 @@ public class Customers extends Person {
 	public void setCustomerID(int customerID) {
 		this.customerID = customerID;
 	}
+	public void PayBill(){
+		Sytem.out.println("Bill has been paid ");
+	}
 
 	
 	
