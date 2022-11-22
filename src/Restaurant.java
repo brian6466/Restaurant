@@ -8,20 +8,10 @@ public class Restaurant {
 	ArrayList<Food> drinks = new ArrayList<Food>();
 	ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 	
-	private double noOfTables;
 	private int restaurantID;
 
-	public Restaurant(double noOfTables, int restaurantID) {
-		this.noOfTables = noOfTables;
+	public Restaurant(int restaurantID) {
 		this.setRestaurantID(restaurantID);
-	}
-
-	public double getNoOfTables() {
-		return noOfTables;
-	}
-
-	public void setNoOfTables(double noOfTables) {
-		this.noOfTables = noOfTables;
 	}
 
 	public int getRestaurantID() {
