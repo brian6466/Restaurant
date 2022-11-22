@@ -12,7 +12,6 @@ public class Restaurant {
 	private int restaurantID;
 
 	public Restaurant(double noOfTables, int restaurantID) {
-		this.location = location;
 		this.noOfTables = noOfTables;
 		this.setRestaurantID(restaurantID);
 	}
