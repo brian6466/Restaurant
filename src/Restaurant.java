@@ -7,22 +7,14 @@ public class Restaurant {
 	ArrayList<Food> desert = new ArrayList<Food>();
 	ArrayList<Food> drinks = new ArrayList<Food>();
 	ArrayList<Reservation> reservations = new ArrayList<Reservation>();
-	private String location;
+	
 	private double noOfTables;
 	private int restaurantID;
 
-	public Restaurant(String location, double noOfTables, int restaurantID) {
+	public Restaurant(double noOfTables, int restaurantID) {
 		this.location = location;
 		this.noOfTables = noOfTables;
 		this.setRestaurantID(restaurantID);
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
 	}
 
 	public double getNoOfTables() {
