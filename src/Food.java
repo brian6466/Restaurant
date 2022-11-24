@@ -6,8 +6,8 @@ public class Food {
 
     /**
      * constructor
-     * @param foodName
-     * @param foodPrice
+     * @param foodName (String foodName)
+     * @param foodPrice (double foodPrice)
      */
     public Food(String foodName, double foodPrice) {
         this.setFoodName(foodName);
@@ -15,7 +15,7 @@ public class Food {
     }
 
     /**
-     * gets food name
+     * gets name of food
      * @return foodName
      */
     public String getFoodName() {
@@ -24,7 +24,7 @@ public class Food {
 
     /**
      * sets food name
-     * @param foodName
+     * @param foodName (String foodName)
      */
     public void setFoodName(String foodName) {
         this.foodName = foodName;
@@ -39,7 +39,7 @@ public class Food {
     }
     /**
      * sets food price
-     * @param foodPrice
+     * @param foodPrice (double foodPrice)
      */
     public void setFoodPrice(double foodPrice) {
         this.foodPrice = foodPrice;
