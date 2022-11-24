@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class Restaurant {
     ArrayList<Table> tables = new ArrayList<Table>();
     ArrayList<Table> unavailableTables = new ArrayList<Table>();
@@ -11,15 +10,15 @@ public class Restaurant {
     ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     private int restaurantID;
-    
+
     /**
      * constructor
-     * @param restaurantID
+     * @param restaurantID (integer restaurantID)
      * */
     public Restaurant(int restaurantID) {
         this.restaurantID = restaurantID;
     }
-    
+
     /**
      * @return reservations
      * */
@@ -28,7 +27,7 @@ public class Restaurant {
     }
 
     /**
-     * 
+     *
      * @return starters
      */
 
@@ -38,7 +37,7 @@ public class Restaurant {
 
     /**
      * method to remove reservations
-     * @param r
+     * @param r (Object Reservation r)
      */
 
     public void removeReservation(Reservation r) {
@@ -62,7 +61,7 @@ public class Restaurant {
 
     /**
      * sets restaurant ID
-     * @param restaurantID
+     * @param restaurantID (integer restaurantID)
      */
     public void setRestaurantID(int restaurantID) {
         this.restaurantID = restaurantID;
@@ -70,7 +69,7 @@ public class Restaurant {
 
     /**
      * add starters to food
-     * @param f
+     * @param f (Object Food f )
      */
     public void addStarter(Food f) {
         starters.add(f);
@@ -78,7 +77,7 @@ public class Restaurant {
 
     /**
      * remove starter from food
-     * @param f
+     * @param f (Object Food f )
      */
     public void removeStarter(Food f) {
         starters.remove(f);
@@ -86,7 +85,7 @@ public class Restaurant {
 
     /**
      * adds main course to food
-     * @param f
+     * @param f (Object Food f )
      */
     public void addMaincourse(Food f) {
         maincourse.add(f);
@@ -94,7 +93,7 @@ public class Restaurant {
 
     /**
      * remove main course from food
-     * @param f
+     * @param f (Object Food f )
      */
     public void removeMaincourse(Food f) {
         maincourse.remove(f);
@@ -102,7 +101,7 @@ public class Restaurant {
 
     /**
      * adds desserts to food
-     * @param f
+     * @param f (Object Food f )
      */
     public void addDesert(Food f) {
         desert.add(f);
@@ -110,7 +109,7 @@ public class Restaurant {
 
     /**
      * remove desserts from food
-     * @param f
+     * @param f (Object Food f )
      */
     public void removeDesert(Food f) {
         desert.remove(f);
@@ -118,7 +117,7 @@ public class Restaurant {
 
     /**
      * adds drinks to food
-     * @param f
+     * @param f (Object Food f )
      */
     public void addDrinks(Food f) {
         drinks.add(f);
@@ -126,7 +125,7 @@ public class Restaurant {
 
     /**
      * remove drinks from food
-     * @param f
+     * @param f (Object Food f )
      */
     public void removeDrinks(Food f) {
         drinks.remove(f);
@@ -134,7 +133,7 @@ public class Restaurant {
 
     /**
      * adds table
-     * @param t
+     * @param t (Object Table t )
      */
     public void addTable(Table t) {
         tables.add(t);
@@ -142,7 +141,7 @@ public class Restaurant {
 
     /**
      * removes table
-     * @param t
+     * @param t (Object Table t )
      */
     public void removeTable(Table t) {
         tables.remove(t);
@@ -152,7 +151,7 @@ public class Restaurant {
 
     /**
      * adds used table
-     * @param t
+     * @param t (Object Table t )
      */
     public void addBackTable(Table t) {
         unavailableTables.remove(t);
