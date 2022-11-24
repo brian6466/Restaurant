@@ -74,9 +74,8 @@ public class Bill {
         for
         (Bill b: billorder)
         {
-            outer.println(b.toString());//creates cvsfile
-        }
-        outer.close(); //prints the data into the csv
+            outer.println(b.toString());
+        outer.close(); 
 
     }
 
