@@ -10,8 +10,6 @@ public class Food {
 		this.setFoodPrice(foodPrice);
 	}
 	
-
-
 	public String getFoodName() {
 		return foodName;
 	}
@@ -28,4 +26,10 @@ public class Food {
 		this.foodPrice = foodPrice;
 	}
 	
+	 public String toString(){
+	        String result = "";
+	        result += "Food Name: " + foodName + "\n";
+	        result += "Food Price: " + foodPrice +"\n";
+	        return result;
+	    }
 }

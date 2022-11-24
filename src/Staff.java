@@ -3,8 +3,8 @@ public class Staff extends Person {
 	
 	private int salary;
 	
-	public Staff(String email, String number, String name, int salary) {
-		super(email, number, name);
+	public Staff(String number, String name, int salary) {
+		super(number, name);
 		this.setSalary(salary);
 	}
 

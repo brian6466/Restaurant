@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Waiter extends Staff{
 	
 
-	public Waiter(String email, String number, String name, int salary) {
-		super(email, number, name, salary);
+	public Waiter(String number, String name, int salary) {
+		super(number, name, salary);
 	}
 	
 	

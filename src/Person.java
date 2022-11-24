@@ -4,8 +4,7 @@ public class Person {
 	private String email;
 	private String number; 
 	
-	public Person(String email, String number, String name) {
-		this.setEmail(email);
+	public Person(String number, String name) {
 		this.setNumber(number );
 		this.setName(name);
 	}

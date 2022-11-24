@@ -5,10 +5,11 @@ public class Customers extends Person {
 	private int customerID = 0;
 	ArrayList<Food> selectedOrder = new ArrayList<Food>();
 	
-	public Customers(String email, String number, String name) {
-		super(email, number, name);
+	public Customers(String number, String name) {
+		super(number, name);
 		setCustomerID(getCustomerID() + 1);
 	}
+	
 	
 	public int getCustomerID() {
 		return customerID;

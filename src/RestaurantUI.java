@@ -249,17 +249,61 @@ public class RestaurantUI
 
 			if (command.equals("1"))
 			{  
-				System.out.println("R)eserve Table O)rder C)ancel Reservation");
+				System.out.println("R)eserve Table O)rder C)ancel Reservation A)vailable Tables");
 				String one = in.nextLine().toUpperCase();
 				if (one.equals("R"))
+					System.out.println("Available Tables");
 				{
-					System.out.println(res1.getTables().toString());
+					for(int i = 0; i < res1.getTables().size(); i++) {
+						int res1TableNo = res1.getTables().get(i).getTableNo();
+						int res1Capacity = res1.getTables().get(i).getCapacity();
+						System.out.println("Table Number: " + res1TableNo + "  Capacity: " + res1Capacity );
+					}
+					
+					System.out.println("Enter Table Number you want to Book");
+					
+					int res1Table = in.nextInt();
+					
+					System.out.println("Enter Table Capacity: ");
+					
+					int res1Capacity = in.nextInt();
+					
+					System.out.println("Enter Name: ");
+					
+					String res1Name = in.nextLine();
+					
+					System.out.println("Enter phone number (EXAMPLE : 0851234567): ");
+					
+					int res1Phone = in.nextInt();
+					
+					System.out.println("Enter time today (EXAMPLE : 15:30): ");
+					
+					String res1Time = in.nextLine();
+					
+					Reservation r = new Reservation(res1, res1Name, res1Table, res1Capacity, res1Phone, res1Time);
+					
+					
 				}
 				if (one.equals("O"))
 				{
-					//Walk in Order
+					System.out.println("Do you want to Order for delivery/takeaway: Y / N");
+					
+					String res1Order = in.nextLine();
+					
+					if (res1Order.equals("Y")) {
+						System.out.println(res1.starters.toString());
+					} 
+					else System.out.println("Goodbye");
 				}
 				if (one.equals("C"))
+				{
+					System.out.println("Are you sure you want to cancel your reservation? Y/N");
+					String res1CancelRes = in.nextLine();
+					if (res1CancelRes.equals("Y")) {
+						
+					}
+				}
+				if (one.equals("A"))
 				{
 					//Cancel Reservation
 				}
@@ -280,6 +324,10 @@ public class RestaurantUI
 				{
 					//Cancel Reservation
 				}
+				if (two.equals("A"))
+				{
+					//Cancel Reservation
+				}
 			}
 			else if (command.equals("3"))
 			{ 
@@ -294,6 +342,10 @@ public class RestaurantUI
 					//Walk in Order
 				}
 				if (three.equals("C"))
+				{
+					//Cancel Reservation
+				}
+				if (three.equals("A"))
 				{
 					//Cancel Reservation
 				}

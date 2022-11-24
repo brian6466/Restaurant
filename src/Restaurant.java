@@ -15,6 +15,14 @@ public class Restaurant {
 		this.restaurantID = restaurantID;
 	}
 	
+	public ArrayList<Food> getStarters(){
+		return starters;
+	}
+	
+	public void removeReservation(Reservation r){
+		reservations.remove(r);
+		
+	}
 
 	public int getRestaurantID() {
 		return restaurantID;
@@ -74,6 +82,5 @@ public class Restaurant {
 	public ArrayList<Table> getTables() {
 		return tables;
 	}
-	
 	
 }
