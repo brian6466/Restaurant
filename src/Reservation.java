@@ -15,7 +15,7 @@ public class Reservation {
 
 
     public Reservation(Restaurant r, String ReservationName, int ReservationSeatNo, int capacity, int ReservationPhoneNo, String time) {
-        ReservationId++;
+        setReservationId(getReservationId() + 1);
         this.ReservationName = ReservationName;
         this.ReservationSeatNo = ReservationSeatNo;
         this.ReservationPhoneNo = ReservationPhoneNo;
@@ -23,12 +23,16 @@ public class Reservation {
         this.capacity = capacity;
         Reservation res = new Reservation(ReservationName, ReservationSeatNo, capacity, ReservationPhoneNo, time);
         r.reservations.add(res);
-        Table t = new Table(ReservationSeatNo, capacity);
-        r.removeTable(t);
+        for (int i = 0; i < r.getTables().size(); i++) {
+        	if (r.getTables().get(i).getTableNo() == ReservationSeatNo) {
+        		r.unavailableTables.add(r.tables.get(i));
+        		r.tables.remove(i);
+        	} 
+        }
     }
     
     public Reservation(String ReservationName, int ReservationSeatNo, int capacity, int ReservationPhoneNo, String time) {
-        ReservationId++;
+        setReservationId(getReservationId() + 1);
         this.ReservationName = ReservationName;
         this.ReservationSeatNo = ReservationSeatNo;
         this.ReservationPhoneNo = ReservationPhoneNo;
@@ -60,4 +64,24 @@ public class Reservation {
         out.close();
 
     }
+
+	public int getReservationId() {
+		return ReservationId;
+	}
+	
+	public int getReservationPhoneNo() {
+		return ReservationPhoneNo;
+	}
+
+	public int getReservationSeatNo() {
+		return ReservationSeatNo;
+	}
+	
+	public int getCapacity() {
+		return capacity;
+	}
+	
+	public void setReservationId(int reservationId) {
+		ReservationId = reservationId;
+	}
 }

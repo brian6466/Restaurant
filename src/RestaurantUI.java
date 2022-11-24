@@ -88,8 +88,56 @@ public class RestaurantUI
     Food Juice  = new Food("Juice ",2.50);
     Food Seven_Up  = new Food("7 Up",3.00);
 
-    public void main(String[] args) {
-    	 //Indian Restaurant Menu
+
+   
+    
+        
+	String file = "src\\Restaurant.csv";
+	BufferedReader reader = null;
+	String line = ""; {
+	
+		try { 
+			reader =  new BufferedReader(new FileReader(file));
+			while((line = reader.readLine()) != null) {
+				String[] row = line.split(",");
+				if (Integer.parseInt(row[0]) == 1) {
+					res1.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
+				}else if (Integer.parseInt(row[0]) == 2) {
+					res2.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
+				} else {
+					res3.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
+				}
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private Scanner in; 
+
+	/**
+      Constructs an AppointmentMenu object.
+	 */
+	public RestaurantUI()
+	{
+		in = new Scanner(System.in);
+	}
+
+	/**
+      Runs the system.
+	 */
+	public void run()
+	{         
+		//Indian Restaurant Menu
 
         //Indians starters added
         res1.addStarter(Poppadoms);
@@ -194,66 +242,21 @@ public class RestaurantUI
         res3.addDrinks(Coke);
         res3.addDrinks(Diet_Coke);
         res3.addDrinks(Juice);
-    }
         
-	String file = "src\\Restaurant.csv";
-	BufferedReader reader = null;
-	String line = ""; {
-	
-		try { 
-			reader =  new BufferedReader(new FileReader(file));
-			while((line = reader.readLine()) != null) {
-				String[] row = line.split(",");
-				if (Integer.parseInt(row[0]) == 1) {
-					res1.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
-				}else if (Integer.parseInt(row[0]) == 2) {
-					res2.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
-				} else {
-					res3.addTable(new Table(Integer.parseInt(row[1]), Integer.parseInt(row[2])));
-				}
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	private Scanner in; 
-
-	/**
-      Constructs an AppointmentMenu object.
-	 */
-	public RestaurantUI()
-	{
-		in = new Scanner(System.in);
-	}
-
-	/**
-      Runs the system.
-	 */
-	public void run()
-	{         
 		boolean more = true;
 		while (more)
 		{  
 			System.out.println("Type 1 for Restaurant one, 2 for Restaurant two, 3 for Restaurant three.");
-			String command = in.nextLine().toUpperCase();
-
+			String command = in.next().toUpperCase();
+			
 			if (command.equals("1"))
 			{  
-				System.out.println("R)eserve Table O)rder C)ancel Reservation A)vailable Tables");
-				String one = in.nextLine().toUpperCase();
-				if (one.equals("R"))
+				System.out.println("R)eserve Table V)iew Menu C)ancel Reservation A)vailable Tables Q)uit");
+				String one = in.next().toUpperCase();
+				
+				if (one.equals("R")) {
+					
 					System.out.println("Available Tables");
-				{
 					for(int i = 0; i < res1.getTables().size(); i++) {
 						int res1TableNo = res1.getTables().get(i).getTableNo();
 						int res1Capacity = res1.getTables().get(i).getCapacity();
@@ -270,7 +273,7 @@ public class RestaurantUI
 					
 					System.out.println("Enter Name: ");
 					
-					String res1Name = in.nextLine();
+					String res1Name = in.next();
 					
 					System.out.println("Enter phone number (EXAMPLE : 0851234567): ");
 					
@@ -278,79 +281,262 @@ public class RestaurantUI
 					
 					System.out.println("Enter time today (EXAMPLE : 15:30): ");
 					
-					String res1Time = in.nextLine();
-					
+					String res1Time = in.next();
+					//System.out.println(res1.getTables().toString());
 					Reservation r = new Reservation(res1, res1Name, res1Table, res1Capacity, res1Phone, res1Time);
-					
+					//System.out.println(res1.getTables().toString());
 					
 				}
-				if (one.equals("O"))
-				{
-					System.out.println("Do you want to Order for delivery/takeaway: Y / N");
+				if (one.equals("V"))
+				{	System.out.println("");
+					System.out.println("Starters:");
+					System.out.println("");
+					for (int i = 0; i < res1.starters.size(); i++) {
+						System.out.println(res1.starters.get(i).getFoodName() + " for €" + res1.starters.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Maincourse:");
+					System.out.println("");
+					for (int i = 0; i < res1.maincourse.size(); i++) {
+						System.out.println(res1.maincourse.get(i).getFoodName() + " for €" + res1.maincourse.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Dessert:");
+					System.out.println("");
+					for (int i = 0; i < res1.desert.size(); i++) {
+						System.out.println(res1.desert.get(i).getFoodName() + " for €" + res1.desert.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Drinks:");
+					System.out.println("");
+					for (int i = 0; i < res1.drinks.size(); i++) {
+						System.out.println(res1.drinks.get(i).getFoodName() + " for €" + res1.drinks.get(i).getFoodPrice());
+					}
 					
-					String res1Order = in.nextLine();
-					
-					if (res1Order.equals("Y")) {
-						System.out.println(res1.starters.toString());
-					} 
-					else System.out.println("Goodbye");
 				}
 				if (one.equals("C"))
 				{
 					System.out.println("Are you sure you want to cancel your reservation? Y/N");
-					String res1CancelRes = in.nextLine();
+					String res1CancelRes = in.next().toUpperCase();
 					if (res1CancelRes.equals("Y")) {
-						
+						System.out.println("Enter phone number you reserved with: ");
+						int res1PhoneCancel = in.nextInt();
+						//System.out.println(res1.getReservations().size());
+						for (int i = 0; i < res1.getReservations().size(); i++) {
+							if (res1.getReservations().get(i).getReservationPhoneNo() == res1PhoneCancel) {
+								res1.removeReservation(res1.getReservations().get(i));
+								
+							}
+						//System.out.println(res1.getReservations().size());
+						}
+					if (res1CancelRes.equals("N")) {
+						more = false;
+					}
 					}
 				}
 				if (one.equals("A"))
 				{
-					//Cancel Reservation
+					for (int i = 0; i < res1.tables.size(); i++) {
+					System.out.println("Table Number: " + res1.tables.get(i).getTableNo());
+					System.out.println("Capacity: " + res1.tables.get(i).getCapacity());
+					}
+				}
+				if (one.equals("Q")) {
+					more = false;
+				}
+			
+		}
+			if (command.equals("2")) {
+				System.out.println("R)eserve Table V)iew Menu C)ancel Reservation A)vailable Tables Q)uit");
+				String one = in.next().toUpperCase();
+				
+				if (one.equals("R")) {
+					
+					System.out.println("Available Tables");
+					for(int i = 0; i < res2.getTables().size(); i++) {
+						int res2TableNo = res2.getTables().get(i).getTableNo();
+						int res2Capacity = res2.getTables().get(i).getCapacity();
+						System.out.println("Table Number: " + res2TableNo + "  Capacity: " + res2Capacity );
+					}
+					
+					System.out.println("Enter Table Number you want to Book");
+					
+					int res2Table = in.nextInt();
+					
+					System.out.println("Enter Table Capacity: ");
+					
+					int res2Capacity = in.nextInt();
+					
+					System.out.println("Enter Name: ");
+					
+					String res2Name = in.next();
+					
+					System.out.println("Enter phone number (EXAMPLE : 0851234567): ");
+					
+					int res2Phone = in.nextInt();
+					
+					System.out.println("Enter time today (EXAMPLE : 15:30): ");
+					
+					String res2Time = in.next();
+					//System.out.println(res1.getTables().toString());
+					Reservation r = new Reservation(res2, res2Name, res2Table, res2Capacity, res2Phone, res2Time);
+					//System.out.println(res1.getTables().toString());
+					
+				}
+				if (one.equals("V"))
+				{	System.out.println("");
+					System.out.println("Starters:");
+					System.out.println("");
+					for (int i = 0; i < res2.starters.size(); i++) {
+						System.out.println(res2.starters.get(i).getFoodName() + " for €" + res2.starters.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Maincourse:");
+					System.out.println("");
+					for (int i = 0; i < res2.maincourse.size(); i++) {
+						System.out.println(res2.maincourse.get(i).getFoodName() + " for €" + res2.maincourse.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Dessert:");
+					System.out.println("");
+					for (int i = 0; i < res2.desert.size(); i++) {
+						System.out.println(res2.desert.get(i).getFoodName() + " for €" + res2.desert.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Drinks:");
+					System.out.println("");
+					for (int i = 0; i < res2.drinks.size(); i++) {
+						System.out.println(res2.drinks.get(i).getFoodName() + " for €" + res2.drinks.get(i).getFoodPrice());
+					}
+					
+				}
+				if (one.equals("C"))
+				{
+					System.out.println("Are you sure you want to cancel your reservation? Y/N");
+					String res2CancelRes = in.next().toUpperCase();
+					if (res2CancelRes.equals("Y")) {
+						System.out.println("Enter phone number you reserved with: ");
+						int res2PhoneCancel = in.nextInt();
+						//System.out.println(res1.getReservations().size());
+						for (int i = 0; i < res2.getReservations().size(); i++) {
+							if (res2.getReservations().get(i).getReservationPhoneNo() == res2PhoneCancel) {
+								res2.removeReservation(res2.getReservations().get(i));
+							}
+						//System.out.println(res1.getReservations().size());
+						}
+					if (res2CancelRes.equals("N")) {
+						more = false;
+					}
+					}
+				}
+				if (one.equals("A"))
+				{
+					for (int i = 0; i < res2.tables.size(); i++) {
+					System.out.println("Table Number: " + res2.tables.get(i).getTableNo());
+					System.out.println("Capacity: " + res2.tables.get(i).getCapacity());
+					}
+				}
+				if (one.equals("Q")) {
+					more = false;
 				}
 			}
-			else if (command.equals("2"))
-			{ 
-				System.out.println("R)eserve Table O)rder C)ancel Reservation");
-				String two = in.nextLine().toUpperCase();
-				if (two.equals("R"))
-				{
-					//Reserve Table
+			if (command.equals("3")) {
+				System.out.println("R)eserve Table V)iew Menu C)ancel Reservation A)vailable Tables Q)uit");
+				String one = in.next().toUpperCase();
+				
+				if (one.equals("R")) {
+					
+					System.out.println("Available Tables");
+					for(int i = 0; i < res3.getTables().size(); i++) {
+						int res3TableNo = res3.getTables().get(i).getTableNo();
+						int res3Capacity = res3.getTables().get(i).getCapacity();
+						System.out.println("Table Number: " + res3TableNo + "  Capacity: " + res3Capacity );
+					}
+					
+					System.out.println("Enter Table Number you want to Book");
+					
+					int res3Table = in.nextInt();
+					
+					System.out.println("Enter Table Capacity: ");
+					
+					int res3Capacity = in.nextInt();
+					
+					System.out.println("Enter Name: ");
+					
+					String res3Name = in.next();
+					
+					System.out.println("Enter phone number (EXAMPLE : 0851234567): ");
+					
+					int res3Phone = in.nextInt();
+					
+					System.out.println("Enter time today (EXAMPLE : 15:30): ");
+					
+					String res3Time = in.next();
+					//System.out.println(res1.getTables().toString());
+					Reservation r = new Reservation(res3, res3Name, res3Table, res3Capacity, res3Phone, res3Time);
+					//System.out.println(res1.getTables().toString());
+					
 				}
-				if (two.equals("O"))
-				{
-					//Walk in Order
+				if (one.equals("V"))
+				{	System.out.println("");
+					System.out.println("Starters:");
+					System.out.println("");
+					for (int i = 0; i < res3.starters.size(); i++) {
+						System.out.println(res3.starters.get(i).getFoodName() + " for €" + res3.starters.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Maincourse:");
+					System.out.println("");
+					for (int i = 0; i < res3.maincourse.size(); i++) {
+						System.out.println(res3.maincourse.get(i).getFoodName() + " for €" + res3.maincourse.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Dessert:");
+					System.out.println("");
+					for (int i = 0; i < res3.desert.size(); i++) {
+						System.out.println(res3.desert.get(i).getFoodName() + " for €" + res3.desert.get(i).getFoodPrice());
+					}
+					System.out.println("");
+					System.out.println("Drinks:");
+					System.out.println("");
+					for (int i = 0; i < res3.drinks.size(); i++) {
+						System.out.println(res3.drinks.get(i).getFoodName() + " for €" + res3.drinks.get(i).getFoodPrice());
+					}
+					
 				}
-				if (two.equals("C"))
+				if (one.equals("C"))
 				{
-					//Cancel Reservation
+					System.out.println("Are you sure you want to cancel your reservation? Y/N");
+					String res3CancelRes = in.next().toUpperCase();
+					if (res3CancelRes.equals("Y")) {
+						System.out.println("Enter phone number you reserved with: ");
+						int res3PhoneCancel = in.nextInt();
+						//System.out.println(res3.getReservations().size());
+						for (int i = 0; i < res3.getReservations().size(); i++) {
+							if (res3.getReservations().get(i).getReservationPhoneNo() == res3PhoneCancel) {
+								res3.removeReservation(res3.getReservations().get(i));
+							}
+						//System.out.println(res3.getReservations().size());
+						}
+					if (res3CancelRes.equals("N")) {
+						more = false;
+					}
+					}
 				}
-				if (two.equals("A"))
+				if (one.equals("A"))
 				{
-					//Cancel Reservation
+					for (int i = 0; i < res3.tables.size(); i++) {
+					System.out.println("Table Number: " + res3.tables.get(i).getTableNo());
+					System.out.println("Capacity: " + res3.tables.get(i).getCapacity());
+					}
+				}
+				if (one.equals("Q")) {
+					more = false;
 				}
 			}
-			else if (command.equals("3"))
-			{ 
-				System.out.println("R)eserve Table O)rder C)ancel Reservation");
-				String three = in.nextLine().toUpperCase();
-				if (three.equals("R"))
-				{
-					//Reserve Table
-				}
-				if (three.equals("O"))
-				{
-					//Walk in Order
-				}
-				if (three.equals("C"))
-				{
-					//Cancel Reservation
-				}
-				if (three.equals("A"))
-				{
-					//Cancel Reservation
-				}
-			}
-		}      
+		}
 	}
-
 }
+	
+
+

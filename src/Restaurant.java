@@ -15,13 +15,23 @@ public class Restaurant {
 		this.restaurantID = restaurantID;
 	}
 	
+	public ArrayList<Reservation> getReservations(){
+		return reservations;
+	}
+	
 	public ArrayList<Food> getStarters(){
 		return starters;
 	}
 	
 	public void removeReservation(Reservation r){
+		for (int i = 0; i < reservations.size(); i++) {
+			if (reservations.get(i).getReservationSeatNo() == r.getReservationSeatNo()) {
+				Table t = new Table(r.getReservationSeatNo(), r.getCapacity());
+				tables.add(t);
+				unavailableTables.remove(t);
+			}
+		}
 		reservations.remove(r);
-		
 	}
 
 	public int getRestaurantID() {
