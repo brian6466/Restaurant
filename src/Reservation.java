@@ -13,12 +13,12 @@ public class Reservation {
 
     /**
      *
-     * @param r
-     * @param ReservationName
-     * @param ReservationSeatNo
-     * @param capacity
-     * @param ReservationPhoneNo
-     * @param time
+     * @param Restaurant (Restaurant object)
+     * @param ReservationName (String Name of reservation)
+     * @param ReservationSeatNo (Int Table number of reservation)
+     * @param Capacity (Int Capacity of the table)
+     * @param ReservationPhoneNo (Int Reservation phone number)
+     * @param Time (String Time of reservation)
      */
     public Reservation(Restaurant r, String ReservationName, int ReservationSeatNo, int capacity,
                        int ReservationPhoneNo, String time) {
@@ -40,11 +40,11 @@ public class Reservation {
 
     /**
      *
-     * @param ReservationName
-     * @param ReservationSeatNo
-     * @param capacity
-     * @param ReservationPhoneNo
-     * @param time
+     * @param ReservationName (String Name of reservation)
+     * @param ReservationSeatNo (Int Table number of reservation)
+     * @param Capacity (Int Capacity of the table)
+     * @param ReservationPhoneNo (Int Reservation phone number)
+     * @param Time (String Time of reservation)
      */
     public Reservation(String ReservationName, int ReservationSeatNo, int capacity, int ReservationPhoneNo,
                        String time) {
@@ -59,7 +59,7 @@ public class Reservation {
 
     /**
      * toString method
-     * @return resulted string
+     * @return toString of reservation
      */
     public String toString() {
         String result = "";
@@ -118,7 +118,7 @@ public class Reservation {
 
     /**
      * sets reservation id
-     * @param  reservationId
+     * @param reservationId (Int reservation ID)
      */
     public void setReservationId(int reservationId) {
         ReservationId = reservationId;
