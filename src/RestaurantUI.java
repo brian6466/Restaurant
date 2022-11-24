@@ -1,7 +1,10 @@
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -123,8 +126,9 @@ public class RestaurantUI {
 
 	/**
 	 * Runs the system.
+	 * @throws FileNotFoundException 
 	 */
-	public void run() {
+	public void run() throws FileNotFoundException {
 		// Indian Restaurant Menu
 
 		// Indians starters added
@@ -230,6 +234,15 @@ public class RestaurantUI {
 
 		boolean more = true;
 		while (more) {
+			ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+			File csvFile = new File("reservation.csv");
+			PrintWriter out = new PrintWriter(csvFile);
+			for (Reservation reservation : reservations) {
+				out.println(reservation.toString());
+			}
+			out.close();
+
+		
 			System.out.println("Type 1 for Restaurant one, 2 for Restaurant two, 3 for Restaurant three.");
 			String command = in.next().toUpperCase();
 
