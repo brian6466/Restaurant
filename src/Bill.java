@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -19,13 +18,11 @@ public class Bill {
     private PrintWriter out = new PrintWriter(filesOrders);
 
     /**
-
      @param date (Local date time)
      @param tip (double tip received)
      @param amount (double amount of bill)
      @param balance (double balance in bill)
      @param description (String Description of bill)
-
      */
     public Bill(LocalDateTime date, double tip, double amount, double balance, String description) throws FileNotFoundException {
         this.date = LocalDateTime.now();
@@ -80,4 +77,4 @@ public class Bill {
         }
 
     }
-        
+}
