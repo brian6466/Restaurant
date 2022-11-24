@@ -8,22 +8,22 @@ public class Restaurant {
 	ArrayList<Food> desert = new ArrayList<Food>();
 	ArrayList<Food> drinks = new ArrayList<Food>();
 	ArrayList<Reservation> reservations = new ArrayList<Reservation>();
-	
+
 	private int restaurantID;
 
 	public Restaurant(int restaurantID) {
 		this.restaurantID = restaurantID;
 	}
-	
-	public ArrayList<Reservation> getReservations(){
+
+	public ArrayList<Reservation> getReservations() {
 		return reservations;
 	}
-	
-	public ArrayList<Food> getStarters(){
+
+	public ArrayList<Food> getStarters() {
 		return starters;
 	}
-	
-	public void removeReservation(Reservation r){
+
+	public void removeReservation(Reservation r) {
 		for (int i = 0; i < reservations.size(); i++) {
 			if (reservations.get(i).getReservationSeatNo() == r.getReservationSeatNo()) {
 				Table t = new Table(r.getReservationSeatNo(), r.getCapacity());
@@ -73,24 +73,24 @@ public class Restaurant {
 	public void removeDrinks(Food f) {
 		drinks.remove(f);
 	}
-	
+
 	public void addTable(Table t) {
 		tables.add(t);
 	}
-	
+
 	public void removeTable(Table t) {
 		tables.remove(t);
 		unavailableTables.add(t);
-		
+
 	}
-	
+
 	public void addBackTable(Table t) {
 		unavailableTables.remove(t);
 		tables.add(t);
 	}
-	
+
 	public ArrayList<Table> getTables() {
 		return tables;
 	}
-	
+
 }

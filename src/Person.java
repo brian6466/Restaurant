@@ -2,10 +2,10 @@
 public class Person {
 	private String name;
 	private String email;
-	private String number; 
-	
+	private String number;
+
 	public Person(String number, String name) {
-		this.setNumber(number );
+		this.setNumber(number);
 		this.setName(name);
 	}
 
