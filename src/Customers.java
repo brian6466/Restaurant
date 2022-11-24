@@ -6,9 +6,9 @@ public class Customers extends Person {
 	ArrayList<Food> selectedOrder = new ArrayList<Food>();
 	
 	/**
-    Customer contructor.
-    @param number
-    @param name
+    Customer constructor.
+    @param number (String number of customer)
+    @param name (String name of customer)
 	 */
 	public Customers(String number, String name) {
 		super(number, name);
@@ -17,7 +17,7 @@ public class Customers extends Person {
 
 	/**
     Gets customer ID
-    @return customerID
+    @return customerID of customer
 	 */
 	public int getCustomerID() {
 		return customerID;
@@ -25,7 +25,7 @@ public class Customers extends Person {
 
 	/**
     Sets customer ID
-    @param customerID
+    @param customerID (Integer customerID of customer)
 	 */
 	public void setCustomerID(int customerID) {
 		this.customerID = customerID;
@@ -38,7 +38,7 @@ public class Customers extends Person {
 
 	/**
     Adds food to order arraylist
-    @param Food
+    @param f (Food object to add to order)
 	 */
 	public void addToOrder(Food f) {
 		selectedOrder.add(f);
@@ -46,7 +46,7 @@ public class Customers extends Person {
 
 	/**
     returns order array list
-    @return ArrayList
+    @return Arraylist of food objects in the order
 	 */
 	public ArrayList<Food> getOrder() {
 		return selectedOrder;
