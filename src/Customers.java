@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * Class to represent a Customer
+ *
+ * */
 public class Customers extends Person {
 
 	private int customerID = 0;

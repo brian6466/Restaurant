@@ -1,3 +1,7 @@
+/**
+ * Class to represent a Waiter
+ *
+ * */
 public class Waiter extends Staff {
     /**
      * constructor
@@ -13,6 +17,7 @@ public class Waiter extends Staff {
      * complete order method which contains a for loop that returns total price
      *
      * @param C(C of Customer)
+     * @return total price of order
      */
     public double completeOrder(Customers C) {
         double totalprice = 0;

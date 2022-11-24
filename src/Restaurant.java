@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * Class to represent a restaurant
+ *
+ * */
 public class Restaurant {
     ArrayList<Table> tables = new ArrayList<Table>();
     ArrayList<Table> unavailableTables = new ArrayList<Table>();

@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent a person
+ *
+ * */
 public class Person {
     private String name;
     private String email;
@@ -6,8 +9,8 @@ public class Person {
 
     /**
      * constructor
-     * @param  number (String number)
-     * @param  name (String name)
+     * @param String number of person
+     * @param String name of person
      */
     public Person(String number, String name) {
         this.setNumber(number);
@@ -15,8 +18,8 @@ public class Person {
     }
 
     /**
-     * gets number ie phone number
-     * @return number
+     * gets number
+     * @return String number of person
      */
     public String getNumber() {
         return number;
@@ -24,7 +27,7 @@ public class Person {
 
     /**
      * sets number
-     * @param number (String number)
+     * @param String number of person
      */
     public void setNumber(String number) {
         this.number = number;
@@ -32,15 +35,15 @@ public class Person {
 
     /**
      * gets email
-     * @return email
+     * @return String email of person
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * sets email of person
-     * @param email (String email)
+     * sets email
+     * @param String email of person
      */
     public void setEmail(String email) {
         this.email = email;
@@ -48,15 +51,15 @@ public class Person {
 
     /**
      * gets name
-     * @return name
+     * @return String name of person
      */
     public String getName() {
         return name;
     }
 
     /**
-     * sets name of person
-     * @param name (String name)
+     * sets name
+     * @param String name of person
      */
     public void setName(String name) {
         this.name = name;

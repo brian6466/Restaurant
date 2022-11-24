@@ -3,6 +3,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+/**
+ * Class to represent a reservation
+ *
+ * */
 public class Reservation {
     private int ReservationId = 0;
     private String ReservationName = "";

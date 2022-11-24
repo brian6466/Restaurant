@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent a table
+ *
+ * */
 public class Table {
     private int capacity;
     private int tableNo;

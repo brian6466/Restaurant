@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent staff
+ *
+ * */
 public class Staff extends Person {
 
     private int salary;

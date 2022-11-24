@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent a chef
+ *
+ * */
 public class Chef extends Staff {
     /**
      * constructor
@@ -14,7 +17,7 @@ public class Chef extends Staff {
      * Method that checks whether order is done or not
      * @param order (Boolean food order )
      */
-    // Method to say if order is ready
+    
     public void CheckOrder(boolean order){
         if(order == true){
             System.out.println("Your order is complete");

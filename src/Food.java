@@ -1,4 +1,7 @@
-
+/**
+ * Class to represent Food
+ *
+ * */
 public class Food {
 
     private String foodName;

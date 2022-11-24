@@ -3,7 +3,10 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
+/**
+ * Class to represent a bill
+ *
+ * */
 public class Bill {
 
 
