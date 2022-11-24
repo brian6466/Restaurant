@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -41,9 +40,9 @@ public class RestaurantCsv {
 			
 		}
 		
-		System.out.println(res1.getTables());
-		System.out.println(res2.getTables());
-		System.out.println(res3.getTables());
+		System.out.println(res1.getTables().size());
+		System.out.println(res2.getTables().size());
+		System.out.println(res3.getTables().size());
 	}
 
 	

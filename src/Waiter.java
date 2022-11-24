@@ -9,7 +9,6 @@ public class Waiter extends Staff{
 	
 	
 	public void completeOrder(Customers C) {
-		//Not implemented yet.
 		double totalprice = 0;
 		
 		for (int i = 0; i <= C.getOrder().size(); i++) {

@@ -4,29 +4,46 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalTime;
 
 public class Reservation {
     private int ReservationId = 0;
     private String ReservationName = "";
     private int ReservationSeatNo = 0;
     private int ReservationPhoneNo = 0;
+    private String time;
+    private int capacity;
+    ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+    ArrayList<Table> reservedTables = new ArrayList<Table>();
 
-    public Reservation(String ReservationName, int ReservationSeatNo, int ReservationPhoneNo) {
+    public Reservation(Restaurant r, String ReservationName, int ReservationSeatNo, int capacity, int ReservationPhoneNo, String time) {
         ReservationId++;
         this.ReservationName = ReservationName;
         this.ReservationSeatNo = ReservationSeatNo;
         this.ReservationPhoneNo = ReservationPhoneNo;
-
+        this.time = time;
+        this.capacity = capacity;
+        reservations.add(new Reservation(r, "ReservationName", ReservationSeatNo, capacity, ReservationPhoneNo, "time"));
+        Table t = new Table(ReservationSeatNo, capacity);
+        r.removeTable(t);
     }
 
-    ArrayList<Reservation> reservations = new ArrayList<Reservation>();
-
-    public void AddReservation(Reservation r) {
-        reservations.add(r);
+    public ArrayList<Table> getReservedTables() {
+    	return reservedTables;
     }
 
     public void CancelReservation(Reservation r) {
         reservations.remove(r);
+    }
+    
+    public String toString(){
+        String result = "";
+        result += "ReservationName: " + ReservationName + "\n";
+        result += "ReservationSeatNo: " + ReservationSeatNo +"\n";
+        result += "ReservationPhoneNo: " + ReservationPhoneNo + "\n";
+        result += "time: " + time + "\n";
+        result += "capacity: " + capacity + "\n";
+        return result;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -35,7 +52,7 @@ public class Reservation {
         PrintWriter out = new PrintWriter(csvFile);
 
         for (Reservation reservation : reservations) {
-            out.println(reservations);
+            out.println(reservation.toString());
 
         }
         out.close();

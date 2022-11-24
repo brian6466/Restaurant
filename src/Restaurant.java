@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Restaurant {
 	ArrayList<Table> tables = new ArrayList<Table>();
+	ArrayList<Table> unavailableTables = new ArrayList<Table>();
 	ArrayList<Food> starters = new ArrayList<Food>();
 	ArrayList<Food> maincourse = new ArrayList<Food>();
 	ArrayList<Food> desert = new ArrayList<Food>();
@@ -11,8 +12,9 @@ public class Restaurant {
 	private int restaurantID;
 
 	public Restaurant(int restaurantID) {
-		this.setRestaurantID(restaurantID);
+		this.restaurantID = restaurantID;
 	}
+	
 
 	public int getRestaurantID() {
 		return restaurantID;
@@ -53,4 +55,25 @@ public class Restaurant {
 	public void removeDrinks(Food f) {
 		drinks.remove(f);
 	}
+	
+	public void addTable(Table t) {
+		tables.add(t);
+	}
+	
+	public void removeTable(Table t) {
+		tables.remove(t);
+		unavailableTables.add(t);
+		
+	}
+	
+	public void addBackTable(Table t) {
+		unavailableTables.remove(t);
+		tables.add(t);
+	}
+	
+	public ArrayList<Table> getTables() {
+		return tables;
+	}
+	
+	
 }
