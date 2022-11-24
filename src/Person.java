@@ -6,8 +6,8 @@ public class Person {
 
     /**
      * constructor
-     * @param number
-     * @param name
+     * @param  number (String number)
+     * @param  name (String name)
      */
     public Person(String number, String name) {
         this.setNumber(number);
@@ -15,7 +15,7 @@ public class Person {
     }
 
     /**
-     * gets number
+     * gets number ie phone number
      * @return number
      */
     public String getNumber() {
@@ -24,7 +24,7 @@ public class Person {
 
     /**
      * sets number
-     * @param number
+     * @param number (String number)
      */
     public void setNumber(String number) {
         this.number = number;
@@ -39,8 +39,8 @@ public class Person {
     }
 
     /**
-     * sets email
-     * @param email
+     * sets email of person
+     * @param email (String email)
      */
     public void setEmail(String email) {
         this.email = email;
@@ -55,8 +55,8 @@ public class Person {
     }
 
     /**
-     * sets name
-     * @param name 
+     * sets name of person
+     * @param name (String name)
      */
     public void setName(String name) {
         this.name = name;
