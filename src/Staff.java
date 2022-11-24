@@ -5,9 +5,9 @@ public class Staff extends Person {
 
     /**
      * constructor
-     * @param number
-     * @param name
-     * @param salary
+     * @param number (String number)
+     * @param name (String name)
+     * @param salary (integer salary)
      */
     public Staff(String number, String name, int salary) {
         super(number, name);
@@ -24,7 +24,7 @@ public class Staff extends Person {
 
     /**
      * sets salary
-     * @param salary
+     * @param salary (integer salary)
      */
     public void setSalary(int salary) {
         this.salary = salary;
