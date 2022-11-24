@@ -18,7 +18,15 @@ public class Bill {
         private File filesOrders = new File("billfororder.csv");
         private PrintWriter out = new PrintWriter(filesOrders);
 
-        //Initializing objects of class bill and throwing except for file not found
+        /**
+
+        @param date
+        @param tip
+        @param amount
+        @param balance
+        @param description
+
+         */
         public Bill(LocalDateTime date, double tip, double amount, double balance, String description) throws FileNotFoundException {
             this.date = LocalDateTime.now();
             this.tip = tip;
@@ -26,7 +34,7 @@ public class Bill {
             this.balance = balance;
             this.description = description;
         }
-        ////Initializing objects of class bill but leaves out tip as it doesn't always occur and throwing except for file not found
+        //Initializing objects of class bill but leaves out tip as it doesn't always occur and throwing except for file not found
     public Bill(LocalDateTime date,double amount,double balance,String description) throws FileNotFoundException {
         this.date = LocalDateTime.now();
         this.amount = amount;
@@ -34,7 +42,10 @@ public class Bill {
         this.description = description;
     }
 
-
+    /**
+     * toString method
+     * @return resulted string
+     */
         public String toString(){
             String result = "";
             result += "Date: " + date + "\n";
@@ -56,6 +67,10 @@ public class Bill {
         billorder.add(Order1);
         billorder.add(Order2);
 
+        /**
+         * creates csv
+         * prints data to csv
+         */
         for
         (Bill b: billorder)
         {
