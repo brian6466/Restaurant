@@ -18,7 +18,7 @@ public class Waiter extends Staff {
     public void completeOrder(Customers C) {
         double totalprice = 0;
 
-        for (int i = 0; i <= C.getOrder().size(); i++) {
+        for (int i = 0; i < C.getOrder().size(); i++) {
             totalprice = totalprice + C.getOrder().get(i).getFoodPrice();
         }
     }
