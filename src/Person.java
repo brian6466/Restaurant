@@ -1,35 +1,64 @@
 
 public class Person {
-	private String name;
-	private String email;
-	private String number;
+    private String name;
+    private String email;
+    private String number;
 
-	public Person(String number, String name) {
-		this.setNumber(number);
-		this.setName(name);
-	}
+    /**
+     * constructor
+     * @param number
+     * @param name
+     */
+    public Person(String number, String name) {
+        this.setNumber(number);
+        this.setName(name);
+    }
 
-	public String getNumber() {
-		return number;
-	}
+    /**
+     * gets number
+     * @return number
+     */
+    public String getNumber() {
+        return number;
+    }
 
-	public void setNumber(String number) {
-		this.number = number;
-	}
+    /**
+     * sets number
+     * @param number
+     */
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    /**
+     * gets email
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    /**
+     * sets email
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getName() {
-		return name;
-	}
+    /**
+     * gets name
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * sets name
+     * @param name 
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 }
