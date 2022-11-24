@@ -2,9 +2,9 @@
 public class Chef extends Staff {
     /**
      * constructor
-     * @param number (id number)
-     * @param name (chefs name)
-     * @param salary (chefs salary)
+     * @param number ( String id number)
+     * @param name (String chefs name)
+     * @param salary (integer chefs salary)
      */
     public Chef(String number, String name, int salary) {
         super(number, name, salary);
@@ -12,7 +12,7 @@ public class Chef extends Staff {
 
     /**
      * Method that checks whether order is done or not
-     * @param order (food order )
+     * @param order (Boolean food order )
      */
     // Method to say if order is ready
     public void CheckOrder(boolean order){
