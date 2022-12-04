@@ -16,7 +16,7 @@ public class Customers extends Person {
 	 */
 	public Customers(String number, String name) {
 		super(number, name);
-		setCustomerID(getCustomerID() + 1);
+		customerID++1;
 	}
 
 	/**
