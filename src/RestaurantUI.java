@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-/**
- * A menu for the appointment calendar system.
- */
 public class RestaurantUI {
 	// Indian Restaurant Object
 	Restaurant res1 = new Restaurant(1);
@@ -117,9 +114,6 @@ public class RestaurantUI {
 
 	private Scanner in;
 
-	/**
-	 * Constructs an AppointmentMenu object.
-	 */
 	public RestaurantUI() {
 		in = new Scanner(System.in);
 	}
